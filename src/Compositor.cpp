@@ -203,7 +203,7 @@ void CCompositor::initServer() {
         if (wlr_renderer_get_drm_fd(m_sWLRRenderer) >= 0)
             wlr_drm_create(m_sWLDisplay, m_sWLRRenderer);
 
-        m_sWLRLinuxDMABuf = wlr_linux_dmabuf_v1_create_with_renderer(m_sWLDisplay, 4, m_sWLRRenderer);
+        m_sWLRLinuxDMABuf = wlr_linux_dmabuf_v1_create_with_renderer(m_sWLDisplay, 2, m_sWLRRenderer);
     }
 
     m_sWLRAllocator = wlr_allocator_autocreate(m_sWLRBackend, m_sWLRRenderer);
