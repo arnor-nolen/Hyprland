@@ -70,8 +70,8 @@ void CIdleNotifyProtocol::bindManager(wl_client* client, void* data, uint32_t ve
     RESOURCE->setDestroy([this](CExtIdleNotifierV1* pMgr) { this->onManagerResourceDestroy(pMgr->resource()); });
     RESOURCE->setGetIdleNotification(
         [this](CExtIdleNotifierV1* pMgr, uint32_t id, uint32_t timeout, wl_resource* seat) { this->onGetNotification(pMgr, id, timeout, seat, true); });
-    RESOURCE->setGetInputIdleNotification(
-        [this](CExtIdleNotifierV1* pMgr, uint32_t id, uint32_t timeout, wl_resource* seat) { this->onGetNotification(pMgr, id, timeout, seat, false); });
+    // RESOURCE->setGetInputIdleNotification(
+    //     [this](CExtIdleNotifierV1* pMgr, uint32_t id, uint32_t timeout, wl_resource* seat) { this->onGetNotification(pMgr, id, timeout, seat, false); });
 }
 
 void CIdleNotifyProtocol::onManagerResourceDestroy(wl_resource* res) {
